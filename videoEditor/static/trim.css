@@ -1,0 +1,166 @@
+.nav-bar-home{
+    display: flex;
+    color: black;
+    border: 1px solid black;
+}
+.productIconNavBar{
+    display: flex;
+    width: 25%;
+    margin-left: 2%;
+}
+#productIcon{
+    margin-top: 5px;
+    width: 50px;
+    height: 50px;
+}
+#productIconText{
+    margin-left: 2%;
+}
+.videoTools{
+    width: 20%;
+    color: rgb(73, 72, 72);
+}
+.audioTools{
+    width: 50%;
+    color: rgb(73, 72, 72);
+}
+.videoEditor{
+    width: 20%;
+    display: flex;
+}
+#videoEditorTag{
+    text-align: end;
+    margin-right: 4%;
+    width: 80%;
+}
+#videoEditorNew{
+    width: 50%;
+}
+.pricing{
+    width: 10%;
+}
+.resources{
+    width: 10%;
+}
+.signIn{
+    color: rgb(61, 148, 148);
+    width: 10%;
+}
+
+
+.trimVideoTag{
+    margin-top: 10%;
+    text-align: center;
+    line-height: 20px;
+}
+#trimVideoTagOpenFile{
+    margin-left: 42%;
+    margin-right: 42%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: rgb(61, 148, 148);
+}
+
+
+.aboutTrimVideo1{
+    margin-top: 5%;
+    display: flex;
+    margin-right: 20%;
+    margin-left: 20%;
+}
+.aboutTrimVideoTag1{
+    width: 50%;
+}
+.aboutTrimVideoTag2{
+    margin-left: 10%;
+    width: 50%;
+}
+.aboutTrimVideoTag3{
+    margin-left: 10%;
+    width: 50%;
+}
+
+.aboutTrimVideo2{
+    margin-top: 5%;
+    display: flex;
+    margin-right: 20%;
+    margin-left: 20%;
+}
+.aboutTrimVideo2Tag1{
+    width: 50%;
+}
+.aboutTrimVideo2Tag2{
+    margin-left: 10%;
+    width: 50%;
+}
+.aboutTrimVideo2Tag3{
+    margin-left: 10%;
+    width: 50%;
+}
+
+.uploadVideo{
+    margin-top: 20%;
+    margin-left: 30%;
+    margin-right: 30%;
+    border: 1px solid black;
+}
+.showVideo{
+    position: relative;
+    z-index: 2;
+    margin-top: 5%;
+    margin-left: 20%;
+    margin-right: 20%;
+    /* border: 1px solid black; */
+    height: 60vh;
+}
+.blackBG{
+    position: absolute;
+    z-index: 1;
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+    opacity: 0.9;
+}
+
+.trimDuration{
+    margin-top: 3%;
+    height: 10%;
+    display: flex;
+    margin-left: 20%;
+    margin-right: 20%;
+    position: relative;
+    z-index: 2;
+}
+#trimDurationStartSec{
+    height: 40px;
+    width: 100px;
+    background-color: white;
+    color: black;
+    text-align: center;
+    margin-left: 20px;
+}
+#trimDurationStopSec{
+    height: 40px;
+    width: 100px;
+    background-color: white;
+    color: black;
+    text-align: center;
+    margin-left: 20px;
+}
+.trimDurationStop{
+    margin-left: 60px;
+}
+
+.trimSave{
+    margin-left: 30vw;
+    height: 40px;
+    background-color: rgb(55, 129, 129);
+    color: black;
+}
+
+.cancelIcon{
+    z-index: 3;
+    position: absolute;
+    margin-top: 3%;
+    margin-left: 75vw;
+}

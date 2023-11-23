@@ -1,0 +1,203 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'style.css' %}">
+        <script src="{% static 'script/index.js' %}"></script>
+    </head>
+    <body>
+        <div class="nav-bar">
+            <div class="productIconNavBar">
+                <img src="{% static 'images/productIcon.png' %}" alt="" id="productIcon">
+                <h4 id="productIconText">proEditor</h4>
+            </div>
+            <div class="videoEditor">
+                <p id="videoEditorTag">video Editor</p>
+                <p id="videoEditorNew">new</p>
+            </div>
+            <div class="tools">
+                <p>tools</p>
+                <div class="avlTools" style="display: none;">
+                    <p>Merge video</p>
+                    <p>Cut video</p>
+                    <p>Crop video</p>
+                    <p></p>
+                </div>
+            </div>
+            <div class="pricing">
+                <p>pricing</p>
+            </div>
+            <div class="resources">
+                <p>Resources</p>
+            </div>
+            <div class="signIn">
+                <p>sign In</p>
+            </div>
+        </div>
+
+        <div class="content">
+            <h1>Online Video Editor</h1>
+            <h2 id="contentH2">Create your own video and edit it in any way on both your phone and computer</h2>
+            <div class="getStarted">
+                Get Started
+            </div>
+        </div>
+
+        <div class="desktopImg">
+            <img src="{% static 'images/preview-desktop.avif' %}" alt="" id="preview-desktop">
+        </div>
+
+        <div class="allInOneEditor">
+            <div class="allInOneEditorTxt">
+                <h2 id="allInOneEditorTxtH2">Your all-in-one online video editor</h2>
+                <p id="allInOneEditorTxtp">Make your own video from scratch, edit it and add music — all in one screen! Our seamless video editor allows you to manage the added media easily with the help of multi-track timeline.</p>
+            </div>
+            <div class="allInOneEditorImg">
+                <img src="{% static 'images/all-in-one.avif' %}" alt="" id="all-in-one">
+            </div>
+        </div>
+
+        <div class="addTextToVideo">
+            <div class="addTextToVideoImg">
+                <img src="{% static 'images/add-text-to-video.avif' %}" alt="" id="add-text-to-video">
+            </div>
+            <div class="addTextToVideoTxt">
+                <h2 id="addTextToVideoTxtH2">Add text to your video</h2>
+                <p id="addTextToVideoTxtp">Our editor comes with all the features necessary to create a great video — add any text to your project, and personalize it! You can change font, size, boldness, color, add background and more!</p>
+            </div>
+        </div>
+
+        <div class="pictureInPicture">
+            <div class="pictureInPictureTxt">
+                <h2 id="pictureInPictureTxtH2">Make picture-in-picture and split-screen videos</h2>
+                <p id="pictureInPictureTxtp">You can manually change the position of both images and videos creating a picture-in-picture, a split-screen video or a collage of any other composition. It has never been so easy!</p>
+            </div>
+            <div class="pictureInPictureImg">
+                <img src="{% static 'images/picture-in-picture.avif' %}" alt="" id="picture-in-picture">
+            </div>
+        </div>
+
+        <div class="sixParagraph">
+            <div class="firstSixParagraph">
+                <div class="allDevices">
+                    <img src="{% static 'images/monitorPhone.jpg' %}" alt="" id="monitorPhone">
+                    <h2 id="sixParagraphH2">Works on All Devices</h2>
+                    <p>Clideo works right in your browser on any device including Mac, Windows, Android and iOS.</p>
+                </div>
+                <div class="aspectRatios">
+                    <img src="{% static 'images/aspectRatio.png' %}" alt="" id="aspectRatio">
+                    <h2 id="sixParagraphH2">Aspect Ratio Presets</h2>
+                    <p>Make your video square, vertical or landscape to share on social media such as YouTube, Facebook, Instagram, Twitter, etc.</p>
+                </div>
+                <div class="diffSettings">
+                    <img src="{% static 'images/settings.png' %}" alt="" id="settings">
+                    <h2 id="sixParagraphH2">Different Settings</h2>
+                    <p>Change volume of all recordings, slow down or speed up video, adjust brightness and contrast of each file... and much more!</p>
+                </div>
+            </div>
+            <div class="secondSixParagraph">
+                <div class="completelyOnline">
+                    <img src="{% static 'images/online.webp' %}" alt="" id="secondSixParagraphImg">
+                    <h2 id="sixParagraphH2">Completely Online</h2>
+                    <p>Our service needs neither downloads nor installations, thus it doesn't take up space on your device.</p>
+                </div>
+                <div class="noExperience">
+                    <img src="{% static 'images/black-bulb.webp' %}" alt="" id="secondSixParagraphImg">
+                    <h2 id="sixParagraphH2">No Experience Needed</h2>
+                    <p>We have made the interface truly user-friendly and easy-to-use, so you don't need any experience in editing to be able to use it!</p>
+                </div>
+                <div class="allFormatSuppot">
+                    <img src="{% static 'images/notePad.jpg' %}" alt="" id="secondSixParagraphImg">
+                    <h2 id="sixParagraphH2">All Formats Supported</h2>
+                    <p>You don't need to worry about the formats anymore as Clideo is compatible with all the modern image, audio and video formats.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="createOnlineVideo">
+            <h2>How to create a video online</h2>
+        </div>
+        <div class="createOnlineVideoTag">
+            <div class="createOnlineVideoTagTxt">
+                <div id="createOnlineVideoTagTxtCnt" class="createOnlineVideoTagTxtCnt1">
+                    <div id="STEP">
+                        <h4>STEP 1</h4>
+                    </div>
+                    <div id="STEP_Content">
+                        <h2 id="STEP_Content_H2">Get started</h2>
+                        <p class="STEP_Content_Tag1" id="STEP_Content_p">Upload all the pics, videos and audio you want to the editor. You can choose them from your device, Google Drive and Dropbox storage account. If you want to make a video from scratch, just proceed to the next step.</p>
+                    </div>
+                </div>
+                <div id="createOnlineVideoTagTxtCnt" class="createOnlineVideoTagTxtCnt2">
+                    <div id="STEP">
+                        <h4>STEP 2</h4>
+                    </div>
+                    <div id="STEP_Content">
+                        <h2 id="STEP_Content_H2"> Create a video</h2>
+                        <p class="STEP_Content_Tag2" id="STEP_Content_p" style="display: none;">Add all the necessary files to the timeline and change their order to your liking. Edit each file one by one: crop, adjust saturation and other settings, change speed and volume. Then add any text you need, set its font, color, size, etc.</p>
+                    </div>
+                </div>
+                <div id="createOnlineVideoTagTxtCnt" class="createOnlineVideoTagTxtCnt3">
+                    <div id="STEP">
+                        <h4>STEP 3</h4>
+                    </div>
+                    <div id="STEP_Content">
+                        <h2 id="STEP_Content_H2">Save the result</h2>
+                        <p class="STEP_Content_Tag3" id="STEP_Content_p" style="display: none;">Now just click on "Export" at the top right, choose one of the export options, and download the new video to your device or save to a cloud storage account.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="createOnlineVideoTagImg">
+                <img src="{% static 'images/how-to-desktop-1.avif' %}" alt="" id="how-to-desktop-1">
+            </div>
+        </div>
+
+        <div class="makeOwnVideo">
+            <h2 class="makeOwnVideoH2">Ready to make your own video?</h2>
+            <h3 class="makeOwnVideoH3">Let's do it with our online video editor!</h3>
+            <div class="makeOwnVideoDiv">
+                <p class="makeOwnVideoP">Get Started</p>
+            </div>
+        </div>
+
+        <div class="trustedCompanies">
+            <h2>Trusted by over 5 million users every month</h2>
+            <h3 class="trustedCompaniesH3">Employees of large and small companies all over the world use our service</h3>
+            <div class="trustedCompaniesImg1" style="display: flex;margin-left: 10%;margin-right: 10%;">
+                <div id="trustedCompaniesPos">
+                    <img src="{% static 'images/google.png' %}" alt="" id="google" style="width: 90px;height: 50px;">
+                </div>
+                <div id="trustedCompaniesPos">
+                    <img src="{% static 'images/facebook.png' %}" alt="" id="facebook" style="width: 90px;height: 50px;">
+                </div>
+                <div id="trustedCompaniesPos">
+                    <img src="{% static 'images/amazon.png' %}" alt="" id="amazon" style="width: 90px;height: 50px;">
+                </div>
+                <div id="trustedCompaniesPos">
+                    <img src="{% static 'images/microsoft.png' %}" alt="" id="microsoft" style="width: 90px;height: 50px;">
+                </div>
+                <div id="trustedCompaniesPos">
+                    <img src="{% static 'images/tesla.png' %}" alt="" id="tesla" style="width: 90px;height: 50px;">
+                </div>
+            </div>
+            <div class="trustedCompaniesImg2" style="display: flex;margin-left: 10%;margin-right: 10%;">
+                <div id="trustedCompaniesPos">
+                    <img src="{% static 'images/nestle.png' %}" alt="" id="nestle" style="width: 90px;height: 50px;">
+                </div>
+                <div id="trustedCompaniesPos">
+                    <img src="{% static 'images/walmart.png' %}" alt="" id="walmart" style="width: 90px;height: 50px;">
+                </div>
+                <div id="trustedCompaniesPos">
+                    <img src="{% static 'images/loreal.png' %}" alt="" id="loreal" style="width: 90px;height: 50px;">
+                </div>
+                <div id="trustedCompaniesPos">
+                    <img src="{% static 'images/fedex.png' %}" alt="" id="fedex" style="width: 90px;height: 50px;">
+                </div>
+                <div id="trustedCompaniesPos">
+                    <img src="{% static 'images/nytimes.png' %}" alt="" id="nytimes" style="width: 150px;height: 50px;">
+                </div>
+            </div>
+        </div>
+        
+    </body>
+</html>

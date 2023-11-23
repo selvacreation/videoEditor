@@ -1,0 +1,130 @@
+{% load static %}
+<!-- django@selva -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'trim.css' %}">
+    </head>
+    <body>
+        <div class="nav-bar-home">
+            <div class="productIconNavBar">
+                <img src="{% static 'images/productIcon.png' %}" alt="" id="productIcon">
+                <h4 id="productIconText">proEditor</h4>
+            </div>
+            <div class="videoTools">
+                <h3>Video Tools</h3>
+                <div class="videoToolsList" style="display: none;">
+                    <p>Merge Videos</p>
+                    <p>Add Audio to Video</p>
+                    <p>Trim Video</p>
+                    <p>Crop Video</p>
+                    <p>Rotate Video</p>
+                    <p>Change Volume</p>
+                </div>
+            </div>
+            <div class="audioTools">
+                <h3>Audio Tools</h3>
+                <div class="audioToolsList" style="display: none;">
+                    <p>Text to Speech</p>
+                    <p>Trim Audio</p>
+                    <p>Change Volume</p>
+                    <p>Voice Recorder</p>
+                    <p>Audio Merger</p>
+                </div>
+            </div>
+            
+            <div class="videoEditor">
+                <p id="videoEditorTag">video Editor</p>
+                <p id="videoEditorNew">new</p>
+            </div>
+            <div class="pricing">
+                <p>pricing</p>
+            </div>
+            <div class="resources">
+                <p>Resources</p>
+            </div>
+            <div class="signIn">
+                <p>sign In</p>
+            </div>
+        </div>
+
+        {% if showTrim %}
+            <div class="blackBG"></div>
+            <div class="cancelIcon">
+                <img src="{% static 'images/cancel.png' %}" id="cancelIc" style="height: 35px;" alt="">
+                <a href="/trim/" id="cancelClick"></a>
+            </div>
+            <div class="showVideo">
+                <video class="videoPlayerTrim" id="videoPlayer" controls width="100%" height="100%">
+                    Your browser does not support the video tag.
+                    <source src="{{ videofile.url }}" type="video/mp4">
+                </video>
+                {% if download %}
+                    <a href="{{ videofile.url }}" download="output_trim.mp4" id="output_trim" style="display: none;"></a>
+                {% endif %}
+            </div>
+            <div class="trimDuration">
+                <div class="trimPlayButton">
+                    <img src="{% static 'images/play.png' %}" style="height: 55px;" alt="">
+                </div>
+                <form method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="form_type" value="form2">
+                    <input type="number" name="startSec" id="trimDurationStartSec" placeholder="startSec">
+                    <input type="number" name="stopSec" id="trimDurationStopSec" placeholder="stopSec">
+                    <button type="submit" class="trimSave">save</button>
+                </form>
+            </div>
+        {% else %}
+            <div class="trimVideoTag">
+                <h1 id="trimVideoTagH1" style="font-size: 60px;">Trim Video</h1>
+                <h4 id="trimVideoTagH4" style="font-size: 25px;color: rgb(102, 100, 100);">Trim or cut video of any format</h4>
+                <h4 id="trimVideoTagOpenFile">
+                    Open file
+                </h4>
+            </div>
+            <div class="uploadVideo" style="display: none;text-align: center;">
+                <h2>Upload Video</h2>
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <input type="hidden" name="form_type" value="form1">
+                    <label for="name">name:</label>
+                    <input type="text" id="name" name="name"><br>
+                    <label for="videofile">Video File:</label>
+                    <input type="file" id="videofile" name="videofile" accept="video/*"><br>
+                    <button type="submit">Upload</button>
+                </form>
+            </div>
+        {% endif %}
+
+        <div class="aboutTrimVideo1">
+            <div class="aboutTrimVideoTag1">
+                <h4>Online Video Cutter</h4>
+                <p>This web app comes in handy when you need to cut a small video file. It does not require installation, and it works in your browser.</p>
+            </div>
+            <div class="aboutTrimVideoTag2">
+                <h4>Crop video</h4>
+                <p>Cropping allows you to frame the video to the desired area or change frame proportions.</p>
+            </div>
+            <div class="aboutTrimVideoTag3">
+                <h4>Rotate video</h4>
+                <p>You can rotate your video 90, 180 or 270 degrees. It can be useful when a portrait scene was shot in a landscape mode or vice versa.</p>
+            </div>
+        </div>
+        <div class="aboutTrimVideo2">
+            <div class="aboutTrimVideo2Tag1">
+                <h4>Video editing online</h4>
+                <p>The app can cut video files right in your browser window. Files of up to 4 GB are supported, and we are about to raise this limit.</p>
+            </div>
+            <div class="aboutTrimVideo2Tag2">
+                <h4>Easy video trimming</h4>
+                <p>After uploading your file, you can choose the quality and format of the output file. There are no complicated controls — every feature is just one or two clicks away.</p>
+            </div>
+            <div class="aboutTrimVideo2Tag3">
+                <h4>Security guaranteed</h4>
+                <p>Your files are automatically deleted from our servers a few hours after you are done working with them. Nobody has access to them except you.</p>
+            </div>
+        </div>
+    </body>
+    <script src="{% static 'script/trim.js' %}"></script>
+</html>

@@ -1,0 +1,326 @@
+.nav-bar {
+    display: flex;
+    color: black;
+    border: 1px solid black;
+}
+.productIconNavBar{
+    display: flex;
+    width: 70%;
+    margin-left: 2%;
+}
+#productIcon{
+    margin-top: 5px;
+    width: 50px;
+    height: 50px;
+}
+#productIconText{
+    margin-left: 2%;
+}
+.videoEditor{
+    width: 20%;
+    display: flex;
+}
+#videoEditorTag{
+    text-align: end;
+    margin-right: 4%;
+    width: 80%;
+}
+#videoEditorNew{
+    width: 50%;
+}
+.tools{
+    width: 10%;
+}
+.pricing{
+    width: 10%;
+}
+.resources{
+    width: 10%;
+}
+.signIn{
+    color: rgb(61, 148, 148);
+    width: 10%;
+}
+
+
+.content{
+    margin-top: 10%;
+    text-align: center;
+}
+#contentH2{
+    color: rgb(90, 70, 70);
+    margin-left: 30%;
+    margin-right: 30%;
+}
+.getStarted{
+    background-color: rgb(61, 148, 148);
+    color: white;
+    padding-top: 20px;
+    margin-left: 40%;
+    padding-bottom: 20px;
+    margin-right: 40%;
+}
+
+
+.desktopImg{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5%;
+}
+#preview-desktop{
+    height: 80vh;
+    width: 80vw;
+}
+
+
+.allInOneEditor{
+    margin-top: 10%;
+    display: flex;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.allInOneEditorTxt{
+    width: 50%;
+}
+.allInOneEditorImg{
+    width: 50%;
+}
+#all-in-one{
+    height: 40vh;
+    width: 40vw;
+}
+#allInOneEditorTxtH2{
+    padding-top: 5%;
+    padding-right: 50%;
+    font-size: 35px;
+}
+#allInOneEditorTxtp{
+    font-size: 20px;
+    padding-right: 25%;
+}
+
+
+.addTextToVideo{
+    margin-top: 10%;
+    display: flex;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.addTextToVideoImg{
+    width: 50%;
+}
+.addTextToVideoTxt{
+    width: 50%;
+    margin-left: 14%;
+}
+#add-text-to-video{
+    height: 40vh;
+    width: 37vw;
+}
+#addTextToVideoTxtH2{
+    font-size: 35px;
+}
+#addTextToVideoTxtp{
+    font-size: 20px;
+}
+
+
+.pictureInPicture{
+    margin-top: 10%;
+    display: flex;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.pictureInPictureImg{
+    size: 50%;
+}
+.pictureInPictureTxt{
+    width: 50%;
+}
+#picture-in-picture{
+    height: 40vh;
+    width: 40vw; 
+}
+#pictureInPictureTxtH2{
+    font-size: 35px;
+    padding-right: 30%;
+}
+#pictureInPictureTxtp{
+    font-size: 20px;
+    padding-right: 25%;
+}
+
+
+.sixParagraph{
+    margin-top: 10%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.firstSixParagraph{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+.allDevices{
+    width: 33%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+.aspectRatios{
+    width: 33%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+.diffSettings{
+    width: 33%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+#monitorPhone{
+    width: 30px;
+    height: 30px;
+}
+#aspectRatio{
+    width: 30px;
+    height: 30px;
+}
+#settings{
+    width: 30px;
+    height: 30px;
+}
+#sixParagraphH2{
+    font-size: 20px;
+}
+
+
+
+.secondSixParagraph{
+    margin-top: 5%;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+.completelyOnline{
+    width: 33%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+.noExperience{
+    width: 33%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+.allFormatSuppot{
+    width: 33%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+#secondSixParagraphImg{
+    height: 30px;
+    width: 30px;
+}
+
+
+.createOnlineVideo{
+    margin-top: 10%;
+    font-size: 20px;
+    text-align: center;
+}
+.createOnlineVideoTag{
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 5%;
+    display: flex;
+}
+.createOnlineVideoTagTxt{
+    margin-right: 5%;
+    width: 50%;
+}
+.createOnlineVideoTagImg{
+    width: 50%;
+}
+#how-to-desktop-1{
+    height: 40vh;
+    width: 40vw; 
+}
+#createOnlineVideoTagTxtCnt{
+    display: flex;
+    justify-content: center;
+}
+#STEP{
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 20%;
+}
+#STEP_Content{
+    width: 80%;
+}
+#STEP_Content_H2{
+    font-size: 20px;
+    color: rgb(68, 65, 65);
+}
+#STEP_Content_p{
+    color: rgb(112, 108, 108);
+}
+.createOnlineVideoTagTxtCnt1{
+    border: 1px solid rgb(207, 205, 205);
+}
+.createOnlineVideoTagTxtCnt2{
+    margin-top: 5%;
+    background-color: rgb(240, 240, 240);
+}
+.createOnlineVideoTagTxtCnt3{
+    margin-top: 5%;
+    background-color: rgb(240, 240, 240);
+}
+.STEP_Content_Tag1{
+    padding-right: 5%;
+}
+.STEP_Content_Tag2{
+    padding-right: 5%;
+}
+.STEP_Content_Tag3{
+    padding-right: 5%;
+}
+
+
+.makeOwnVideo{
+    margin-top: 10%;
+    font-size: 20px;
+    text-align: center;
+}
+.makeOwnVideoH2{
+    text-align: center;
+}
+.makeOwnVideoH3{
+    font-size: 20px;
+    color: rgb(114, 112, 112);
+}
+.makeOwnVideoDiv{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-left: 45%;
+    margin-right: 45%;
+    background-color: rgb(61, 148, 148);
+    color: white;
+}
+
+
+.trustedCompanies{
+    margin-top: 10%;
+    font-size: 20px;
+    text-align: center;
+}
+.trustedCompaniesH3{
+    font-size: 20px;
+    color: rgb(114, 112, 112);
+}
+#trustedCompaniesPos{
+    margin-top: 3%;
+    width: 20%;
+    padding: 10px;
+}
