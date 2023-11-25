@@ -70,6 +70,7 @@
                 <form method="post">
                     {% csrf_token %}
                     <input type="hidden" name="form_type" value="form2">
+                    <input type="hidden" name="video_id" value= "{{ form.id }}">
                     <input type="number" name="startSec" id="trimDurationStartSec" placeholder="startSec">
                     <input type="number" name="stopSec" id="trimDurationStopSec" placeholder="stopSec">
                     <button type="submit" class="trimSave">save</button>
