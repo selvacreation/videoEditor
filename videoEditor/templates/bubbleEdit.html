@@ -1,0 +1,184 @@
+{% load static %}
+<!-- django@selva -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'bubble.css' %}">
+    </head>
+    <body>
+        <div class="nav-bar-home">
+            <div class="productIconNavBar">
+                <img src="{% static 'images/productIcon.png' %}" alt="" id="productIcon">
+                <h4 id="productIconText">proEditor</h4>
+            </div>
+            <div class="videoTools">
+                <h3 id="videoToolsH3">Video Tools</h3>
+                <div id="videoToolsList" style="display: none;">
+                    <p>Merge Videos</p>
+                    <p>Add Audio to Video</p>
+                    <p>Trim Video</p>
+                    <p>Crop Video</p>
+                    <p>Rotate Video</p>
+                    <p>Change Volume</p>
+                </div>
+            </div>
+            <div class="audioTools">
+                <h3>Audio Tools</h3>
+                <div id="audioToolsList" style="display: none;">
+                    <p>Text to Speech</p>
+                    <p>Trim Audio</p>
+                    <p>Change Volume</p>
+                    <p>Voice Recorder</p>
+                    <p>Audio Merger</p>
+                </div>
+            </div>
+            
+            <div class="videoEditor">
+                <p id="videoEditorTag">video Editor</p>
+                <p id="videoEditorNew">new</p>
+            </div>
+            <div class="pricing">
+                <p>pricing</p>
+            </div>
+            <div class="resources">
+                <p>Resources</p>
+            </div>
+            <div class="signIn">
+                <p>sign In</p>
+            </div>
+        </div>
+
+        {% if showEditor %}
+            <!-- <div id="bubbleVideoEditing"> -->
+                <div class="blackBG"></div>
+                {% if BubbleEditorr %}
+                <div class="BubbleEditorr">
+                    <div class="editorGrid">
+                        <div class="templateVideo">
+                            <h3>Template Video</h3>
+                            <div class="templateVideoVidDiv">
+                                <video class="templateVideoVid" id="templateVideoVid" controls width="100%" height="100%">
+                                    Your browser does not support the video tag.
+                                    <source src="{{ videofile.url }}" type="video/mp4">
+                                </video>
+                            </div>
+                            
+                        </div>
+                        <div class="bubbleVideo">
+                            <h3>Bubble Video</h3>
+                            <div class="bubbleVideoVidDiv">
+                                <video class="bubbleVideoVid" id="bubbleVideoVid" controls width="100%" height="100%">
+                                    Your browser does not support the video tag.
+                                    <source src="{{ videofileBubble.url }}" type="video/mp4">
+                                </video>
+
+                                {% if showUploadBubble %}
+                                    <div class="bubbleVideoUpload">
+                                        <h4 id="bubbleVideoUploadH4">Upload File</h4>
+                                    </div>
+                                    <div class="uploadVideoBubble" style="display: none;text-align: center;">
+                                        <h2>Upload Video</h2>
+                                        <form method="post" enctype="multipart/form-data">
+                                            {% csrf_token %}
+                                            <input type="hidden" name="form_type" value="form2">
+                                            <input type="hidden" name="templateVideoId" value="{{form.id}}">
+                                            <label for="name">name:</label>
+                                            <input type="text" id="name" name="name"><br>
+                                            <label for="videofile">Video File:</label>
+                                            <input type="file" id="videofile" name="videofile" accept="video/*"><br>
+                                            <button type="submit">Upload</button>
+                                        </form>
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="SaveOrCancel">
+                        <p id="SaveOrCancelP">
+                            cancel
+                            <a href="/bubble/" id="cancelClick"></a>
+                        </p>
+                        <form action="" method="post"  >
+                            {% csrf_token %}
+                            <input type="hidden" name="form_type" value="form3">
+                            <input type="hidden" name="bubbleVideoId" value="{{form.id}}">
+                            <input type="hidden" name="templateVideoId" value="{{templateVideo.id}}">
+                            <input type="hidden" name="templateVideoFile" value="{{ videofile }}">
+                            <input type="hidden" name="bubbleVideoFile" value="{{videofileBubble}}">
+                            <button type="submit" id="SaveOrCancelForm">Save</button>
+                        </form>
+                    </div>
+                </div>
+                {% else %}
+                    <div class="cancelIcon">
+                        <img src="{% static 'images/cancel.png' %}" id="cancelIc" style="height: 35px;" alt="">
+                        <a href="/bubble/" id="cancelClick"></a>
+                    </div>
+                    <div class="showVideo">
+                        <video class="videoPlayerBubble" id="videoPlayer" controls width="100%" height="100%">
+                            Your browser does not support the video tag.
+                            <source src="{{ bubbleVideo.url }}" type="video/mp4">
+                        </video>
+                        <!-- {% if download %}
+                            <a href="{{ bubbleVideo.url }}" download="output_bubble.mp4" id="output_bubble" style="display: none;"></a>
+                        {% endif %} -->
+                    </div>
+                {% endif %}
+            <!-- </div> -->
+        {% else %}
+            <div class="bubbleMain">
+                <h1 id="bubbleMainH1">BubbleCam Videos</h1>
+                <h3 id="bubbleMainH3">Add bubble cam video's within seconds!</h3>
+                <p id="bubbleMainP">Choose files</p>
+            </div>
+            <div class="uploadVideo" style="display: none;text-align: center;">
+                <h2>Upload Video</h2>
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <input type="hidden" name="form_type" value="form1">
+                    <label for="name">name:</label>
+                    <input type="text" id="name" name="name"><br>
+                    <label for="videofile">Video File:</label>
+                    <input type="file" id="videofile" name="videofile" accept="video/*"><br>
+                    <button type="submit">Upload</button>
+                </form>
+            </div>
+        {% endif %}
+
+        <div class="bubbleFeature">
+            <div class="bubbleFeature1">
+                <img src="{% static 'images/star.png' %}" id="bubbleFeature1Img" style="height: 35px;" alt="">
+                <h3 style="font-size: 23px;background-color: rgb(238, 238, 169);">Easy Video Merging</h3>
+                <p style="font-size: 18px;">Instantly upload any number of videos or images and combine them with one click.</p>
+            </div>
+            <div class="bubbleFeature2">
+                <img src="{% static 'images/music.png' %}" id="bubbleFeature2Img" style="height: 35px;" alt="">
+                <h3 style="font-size: 23px;background-color: rgb(193, 230, 193);">Add a Great Song</h3>
+                <p style="font-size: 18px;">To complete the atmosphere of your video, add music to the project. Don't forget to adjust its length and volume.</p>
+            </div>
+            <div class="bubbleFeature3">
+                <img src="{% static 'images/youtube.png' %}" id="bubbleFeature3Img" style="height: 35px;" alt="">
+                <h3 style="font-size: 23px;background-color: rgb(215, 224, 240);">Supports All Video Formats</h3>
+                <p style="font-size: 18px;">The video combiner supports most video formats including MP4, AVI, MPG, VOB, WMV, MOV, and more.</p>
+            </div>
+        </div>
+        <div class="bubbleFeaturenext">
+            <div class="bubbleFeature1">
+                <img src="{% static 'images/web.png' %}" id="bubbleFeature1Img" style="height: 35px;" alt="">
+                <h3 style="font-size: 23px;background-color: rgb(230, 198, 215);">Completely Online</h3>
+                <p style="font-size: 18px;">There is no need to download and install any app to your phone, tablet or computer — use the online Clideo tools instead.</p>
+            </div>
+            <div class="bubbleFeature2">
+                <img src="{% static 'images/shield.png' %}" id="bubbleFeature2Img" style="height: 35px;" alt="">
+                <h3 style="font-size: 23px;background-color: rgb(208, 186, 216);">High-Level Security</h3>
+                <p style="font-size: 18px;">Your video files are protected at all times with premium security encryption that our website offers.</p>
+            </div>
+            <div class="bubbleFeature3">
+                <img src="{% static 'images/settings.png' %}" id="bubbleFeature3Img" style="height: 35px;" alt="">
+                <h3 style="font-size: 23px;background-color: rgb(228, 207, 207);">Video Combining Options</h3>
+                <p style="font-size: 18px;">Select from several resolutions, formats and crop options to create one amazing video!</p>
+            </div>
+        </div>
+    </body>
+    <script src="{% static 'script/bubble.js' %}"></script>
+</html>

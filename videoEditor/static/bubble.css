@@ -1,0 +1,238 @@
+.nav-bar-home{
+    display: flex;
+    color: black;
+    border: 1px solid black;
+}
+.productIconNavBar{
+    display: flex;
+    width: 25%;
+    margin-left: 2%;
+}
+#productIcon{
+    margin-top: 5px;
+    width: 50px;
+    height: 50px;
+}
+#productIconText{
+    margin-left: 2%;
+}
+.videoTools{
+    width: 20%;
+    position: relative;
+    color: rgb(73, 72, 72);
+}
+
+#videoToolsList{
+    border: 1px solid black;
+    position: absolute;
+    /* top: 60px; */
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-left: -15px;
+    margin-top: 2px;
+}
+
+
+.audioTools{
+    width: 50%;
+    position: relative;
+    color: rgb(73, 72, 72);
+}
+#audioToolsList{
+    margin-top: 2px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-left: -10px;
+    position: absolute;
+    border: 1px solid black;
+}
+
+.videoEditor{
+    width: 20%;
+    display: flex;
+}
+#videoEditorTag{
+    text-align: end;
+    margin-right: 4%;
+    width: 80%;
+}
+#videoEditorNew{
+    width: 50%;
+}
+.pricing{
+    width: 10%;
+}
+.resources{
+    width: 10%;
+}
+.signIn{
+    color: rgb(61, 148, 148);
+    width: 10%;
+}
+
+
+.bubbleMain{
+    margin-top: 7%;
+    text-align: center;
+    line-height: 25px;
+}
+#bubbleMainH1{
+    font-size: 50px;
+}
+#bubbleMainH3{
+    font-size: 25px;
+}
+#bubbleMainP{
+    margin-top: 40px;
+    margin-left: 40%;
+    margin-right: 40%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 25px;
+    background-color: rgb(61, 148, 148);
+}
+.bubbleFeature{
+    margin-top: 7%;
+    margin-left: 15%;
+    margin-right: 15%;
+    display: flex;
+}
+.bubbleFeature1{
+    width: 33%;
+    padding: 3%;
+    margin-right: 3%;
+    /* border: 1px solid black; */
+    background-color: rgb(240, 240, 240);
+}
+.bubbleFeature2{
+    width: 34%;
+    padding: 3%;
+    margin-right: 3%;
+    /* border: 1px solid black; */
+    background-color: rgb(240, 240, 240);
+}
+.bubbleFeature3{
+    width: 33%;
+    padding: 3%;
+    /* border: 1px solid black; */
+    background-color: rgb(240, 240, 240);
+}
+
+
+.bubbleFeaturenext{
+    margin-top: 2%;
+    margin-left: 15%;
+    margin-right: 15%;
+    display: flex;
+}
+
+.uploadVideo{
+    margin-top: 20%;
+    margin-left: 30%;
+    margin-right: 30%;
+    border: 1px solid black;
+}
+
+.blackBG{
+    position: absolute;
+    z-index: 1;
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+    opacity: 0.9;
+}
+.BubbleEditorr{
+    position: relative;
+    z-index: 2;
+}
+.editorGrid{
+    display: flex;
+    margin: 5%;
+    color: white;
+    text-align: center;
+}
+.templateVideo{
+    width: 50%;
+    margin-right: 30px;
+}
+.bubbleVideo{
+    width: 50%;
+}
+.templateVideoVidDiv{
+    margin-top: 20px;
+    height: 40vh;
+}
+.bubbleVideoVidDiv{
+    margin-top: 20px;
+    height: 40vh;
+    position: relative;
+    /* position: absolute; */
+}
+.bubbleVideoUpload{
+    position: absolute;
+    justify-content: center;
+}
+#bubbleVideoUploadH4{
+    margin-top: -200px;
+    margin-left: 15vw;
+    color: white;
+    height: 40px;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(61, 61, 219);
+}
+.SaveOrCancel{
+    display: flex;
+    margin-top: -3%;
+    margin-right: 35%;
+    margin-left: 42%;
+}
+#SaveOrCancelP{
+    border: 1px solid black;
+    height: 40px;
+    width: 100px;
+    background-color: red;
+    color: white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 2vw;
+}
+#SaveOrCancelForm{
+    border: 1px solid black;
+    height: 40px;
+    width: 100px;
+    background-color: blue;
+    color: white;
+    text-align: center;
+    margin-top: 2vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.uploadVideoBubble{
+    text-align: center;
+    position: absolute;
+    margin-top: -31vh;
+    margin-left: 12vw;
+    border: 1px solid black;
+}
+
+.cancelIcon{
+    z-index: 3;
+    position: absolute;
+    margin-top: 3%;
+    margin-left: 75vw;
+}
+.showVideo{
+    position: relative;
+    z-index: 2;
+    margin-top: 5%;
+    margin-left: 20%;
+    margin-right: 20%;
+    /* border: 1px solid black; */
+    height: 60vh;
+}

@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded',function(){
     }
     const trimPlayButton = document.getElementsByClassName("trimPlayButton")
     console.log("1",trimPlayButton)
-    if(trimPlayButton)
+    if(trimPlayButton[0])
     {
         trimPlayButton[0].addEventListener('click',()=>{
             console.log("2")
@@ -84,4 +84,23 @@ document.addEventListener('DOMContentLoaded',function(){
             document.getElementById("cancelClick").click();
         });
     }
+    videoTools = document.querySelector(".videoTools")
+    videoTools.addEventListener("mouseover",function(){
+        const videoTool = document.getElementById("videoToolsList")
+        videoTool.style.display = ""
+
+    })
+    videoTools.addEventListener("mouseout",function(){
+        const vidToolList = document.getElementById("videoToolsList")
+        vidToolList.style.display = "none";
+    })
+    audioTools = document.querySelector(".audioTools")
+    audioTools.addEventListener("mouseover",function(){
+        const audioToolsList = document.getElementById("audioToolsList")
+        audioToolsList.style.display = ""
+    })
+    audioTools.addEventListener("mouseout",function(){
+        const audioToolsList = document.getElementById("audioToolsList")
+        audioToolsList.style.display = "none"
+    })
 });
