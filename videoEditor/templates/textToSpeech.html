@@ -1,0 +1,71 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'tts.css' %}">
+    </head>
+    <body>
+        <div class="picBanner">
+            <div class="ttsBanner">
+                <img src="{% static 'images/tts.png' %}" alt="" style="height: 100%;width: 100%;">
+            </div>
+            <div class="lapBanner">
+                <div class="HeadlapBanner">
+                    <h1>Text To Speech</h1>
+                </div>
+                <div class="configlapBanner">
+                    <div class="gender">
+                        <p class="genderP">Choose Gender</p>
+                        <div class="genderList" style="display: none;">
+                            <p id="Male">Male</p>
+                            <p id="Female">Female</p>
+                        </div>
+                    </div>
+                    <div class="Accent">
+                        <p class="AccentP">Choose Accent</p>
+                        <div class="AccentList" style="display: none;">
+                            <p id="AmericanAL">American</p>
+                            <p id="BritishAL">British</p>
+                            <p id="IndianAL">Australian</p>
+                            <p id="SpanishAL">Italian</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="InputlapBanner">
+                    <input type="text" placeholder="enter text here..." id="InputlapBanner">
+                </div>
+                <div class="GenerateTag">
+                    <form enctype="multipart/form-data" method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="Accent" id="GenerateTagAccent">
+                        <input type="hidden" name="Gender" id="GenerateTagGender">
+                        <input type="hidden" name="Text" id="GenerateTagText">
+                        <button id="GenerateButton" type="submit" style="font-size: 17px;">Generate</button>
+                    </form>
+                    <div id="Spam" style="display: none;">
+                        <p style="color: red;">!please select gender and accent</p>
+                    </div>
+                </div>
+                <div class="AudioPlayerlapBanner">
+                    <audio id="APBAudio" controls height="100%" width="100%" >
+                    </audio>
+                    <script>
+                        var audioPlayer = document.getElementById('APBAudio');
+                        var audioBase64 = "{{ audio_base64 }}";
+                        if (audioBase64) {
+                            try {
+                            audioPlayer.src = "data:audio/mp3;base64," + audioBase64;
+                            } catch (error) {
+                            console.error("Error setting audio source:", error);
+                            }
+                        } else {
+                            console.error("Audio base64 data is empty.");
+                        }
+
+                    </script>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="{% static 'script/tts.js' %}"></script>
+</html>

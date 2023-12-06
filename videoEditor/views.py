@@ -8,10 +8,12 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
 from .models import Video
+from .models import BubbleVideos
 from .forms import VideoForm
 import subprocess
 from django.core.files import File
 from django.core.files.base import ContentFile
+import base64
 
 
 def members(request):
@@ -132,7 +134,7 @@ def bubble(request):
                     file_content = file.read()
                 
                 relative_file_path = 'videos/tempBubble.mp4'
-                video = Video(name="bubbleVideo",parent_video = f"{templateVideoId}_{bubbleVideoId}")
+                video = BubbleVideos(category="bubbleVideo",template_video_id = templateVideoId, bubble_video_id = bubbleVideoId)
                 video.videofile.save(relative_file_path, ContentFile(file_content))
 
                 context = {
@@ -142,3 +144,71 @@ def bubble(request):
                 }
 
     return HttpResponse(template.render(context,request))
+
+def textToSpeech(request):
+     template = loader.get_template('textToSpeech.html')
+     context = {
+          "success": True
+     }
+     if request.method == "POST":
+          Gender = request.POST.get("Gender")
+          Accent = request.POST.get("Accent")
+          Text = request.POST.get("Text")
+
+          print(f"Gender is - {Gender}")
+          print(f"Accent is - {Accent}")
+          print(f"Text is - {Text}")
+           
+          des,resp = elevenLabsTtsApi(Gender,Accent,Text)
+
+          audio_data = resp.content
+          audio_base64 = base64.b64encode(audio_data).decode('utf-8')
+          context = {
+               "success": True,
+               "audio_base64": audio_base64
+          }
+          return HttpResponse(template.render(context,request))
+     return HttpResponse(template.render(context,request))
+
+def elevenLabsTtsApi(Gender,Accent,Text):
+    import requests
+    import json
+
+    availableMaleVoiceIds = {
+         "American": "pNInz6obpgDQGcFmaJgB",
+         "British": "Yko7PKHZNXotIFUBG7I9",
+         "Australian": "IKne3meq5aSn9XLyUdCD",
+         "Italian": "zcAOhNBS3c14rBihAFp1"
+    }
+    availableFemaleVoiceIds = {
+         "American": "EXAVITQu4vr4xnSDxMaL",
+         "British": "ThT5KcBeYPX3keUQqHPh",
+         "Australian": "XB0fDUnXU5powFXDhCwa",
+         "Italian": "oWAxZDx7w5VEj9dCyTzz"
+    }
+    if Gender in ["Male"]:
+        url = f"https://api.elevenlabs.io/v1/text-to-speech/{availableMaleVoiceIds[Accent]}" 
+        print("url->",url)
+    elif Gender in ["Female"]:
+        url = f"https://api.elevenlabs.io/v1/text-to-speech/{availableFemaleVoiceIds[Accent]}" 
+        print("female url -> ",url)
+
+    headers = {
+        "Content-Type": "application/json",
+        "xi-api-key": "3f70c9f5a84bfaf732d13c9846727f05"
+    }
+
+    data = {
+        "text": Text,
+        "model_id": "eleven_monolingual_v1",
+        "voice_settings": {
+            "stability": 1,
+            "similarity_boost": 1
+        }
+    }
+    response = requests.post(url, headers=headers, data=json.dumps(data))
+    desPath = "/home/digital/webApp/webApp/media/videos/temp1.mp3"
+    # if response.status_code in [200]:
+    #     with open(desPath, "wb") as f:
+    #         f.write(response.content)
+    return desPath,response

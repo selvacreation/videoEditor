@@ -47,18 +47,13 @@ document.addEventListener('DOMContentLoaded',function(){
             document.getElementById("cancelClick").click();
         })
     }
-    SaveOrCancelForm = document.getElementById("SaveOrCancelForm")
-    if (SaveOrCancelForm){
-        SaveOrCancelForm.addEventListener("click",function(){
-            BubbleEditorr = document.querySelector(".BubbleEditorr")
-            cancelIc = document.getElementById("cancelIc")
-            
-            if (cancelIc){
-                cancelIc.addEventListener("click",function(){
-                    document.getElementById("cancelClick").click();
-                })
-            }
-            BubbleEditorr.style.display = "none"
+   
+    cancelIc = document.getElementById("cancelIc")
+    if (cancelIc){
+        cancelIc.addEventListener("click",function(){
+            document.getElementById("cancelClickImg").click();
         })
+    // BubbleEditorr.style.display = "none"
     }
+        
 });
