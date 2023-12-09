@@ -1,0 +1,43 @@
+.proEditorMain{
+    text-align: center;
+    margin-top: 5%;
+}
+
+.proEditorFeatures{
+    /* margin-top: 5%; */
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.Feature1{
+    display: flex;
+    text-align: center;
+}
+#FeatureBox{
+    width: 33.3%;
+    border: 1px solid black;
+
+}
+/* .Feature1_2{
+    width: 34%;
+    border: 1px solid black;
+}
+.Feature1_3{
+    width: 33%;
+    border: 1px solid black;
+} */
+#preview-desktop{
+    height: 170px;
+    margin-top: 7%;
+}
+#FeatureTxt{
+    padding-left: 13%;
+    padding-right: 13%;
+}
+.Feature2{
+    display: flex;
+    text-align: center;
+}
+.Feature3{
+    display: flex;
+    text-align: center;
+}

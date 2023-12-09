@@ -1,0 +1,51 @@
+{% load static %}
+<!-- django@selva -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'header.css' %}">
+    </head>
+    <body>
+        <div class="nav-bar-home">
+            <div class="productIconNavBar">
+                <img src="{% static 'images/productIcon.png' %}" alt="" id="productIcon">
+                <h4 id="productIconText">proEditor</h4>
+            </div>
+            <div class="videoTools">
+                <h3 id="videoToolsH3">Video Tools</h3>
+                <div id="videoToolsList" style="display: none;">
+                    <p>Merge Videos</p>
+                    <p>Add Audio to Video</p>
+                    <p>Trim Video</p>
+                    <p>Crop Video</p>
+                    <p>Rotate Video</p>
+                    <p>Change Volume</p>
+                </div>
+            </div>
+            <div class="audioTools">
+                <h3>Audio Tools</h3>
+                <div id="audioToolsList" style="display: none;">
+                    <p>Text to Speech</p>
+                    <p>Trim Audio</p>
+                    <p>Change Volume</p>
+                    <p>Voice Recorder</p>
+                    <p>Audio Merger</p>
+                </div>
+            </div>
+            
+            <div class="videoEditor">
+                <p id="videoEditorTag">video Editor</p>
+                <p id="videoEditorNew">new</p>
+            </div>
+            <div class="pricing">
+                <p>pricing</p>
+            </div>
+            <div class="resources">
+                <p>Resources</p>
+            </div>
+            <div class="signIn">
+                <p>sign In</p>
+            </div>
+        </div>
+    </body>
+</html>
