@@ -14,7 +14,8 @@
 }
 #FeatureBox{
     width: 33.3%;
-    border: 1px solid black;
+    /* border: 1px solid black; */
+    transition: box-shadow .15s ease-in-out;
 
 }
 /* .Feature1_2{

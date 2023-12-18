@@ -7,5 +7,6 @@ urlpatterns = [
     path('bubble/',views.bubble, name='bubble'),
     path('tts/',views.textToSpeech, name='textToSpeech'),
     path('merge/',views.merge, name='merge'),
-    path('features/',views.features, name='features')
+    path('features/',views.features, name='features'),
+    path('record/',views.record, name='record')
 ]

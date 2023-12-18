@@ -1,0 +1,160 @@
+{% load static %}
+<!-- django@selva -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'features.css' %}">
+        <link rel="stylesheet" href="{% static 'recorder.css' %}">
+    </head>
+    <body>
+        {% include 'header.html' %}
+        <div class="recorder" style="display: none;">
+            <div class="blackBG"></div>
+            <div class="camTag" style="display: flex;">
+                <video id="video" autoplay></video>
+                <!-- <button onclick="uploadVideo()" id="RecordBtn">start</button> -->
+                <div id="RecordBtn">
+                    <img onclick="uploadVideo()" style="margin-left: 45%;height: 50px;" src="{% static 'images/recorder.png' %}" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="backgroundImgRecord">
+            <img src="{% static 'images/background_img_purple.webp' %}" style="width: 100%;height: 100%;" alt="">
+        </div>
+        <div class="txtAndImgBanner">
+            <div class="txtAndImgBannerTxt">
+                <h1 style="font-size: 45px;">Free Online Camera Recorder</h1>
+                <h5 style="font-size: 20px;">Record your screen, webcam, and voice with one click.</h5>
+                <p class="txtAndImgBannerTxtP">Start Recording</p>
+            </div>
+            <div class="txtAndImgBannerImg">
+                <img src="{% static 'images/RecorderLap.png' %}" alt="">
+            </div>
+        </div>
+        <div class="MoongList">
+            <img src="{% static 'images/google.png' %}" style="height: 40px;margin-right: 20px;" alt="">
+            <img src="{% static 'images/amazon.png' %}" style="height: 40px;margin-right: 20px;" alt="">
+            <img src="{% static 'images/microsoft.png' %}" style="height: 40px;margin-right: 20px;" alt="">
+            <img src="{% static 'images/walmart.png' %}" style="height: 40px;" alt="">
+        </div>
+        <div class="showFeatures">
+            <div class="showFeaturesDiv">
+                <h1>More Video Tools for Your Needs</h1>
+                <div class="showFeaturesDivList">
+                    <div style="display: flex;">
+                        <p id="showFeaturesDivListP">Bubble Video</p>
+                        <p id="showFeaturesDivListP">Trim Video</p>
+                    </div>
+                    <div style="display: flex;">
+                        <p id="showFeaturesDivListP">Crop Video</p>
+                        <p id="showFeaturesDivListP">Merge Video</p>
+                    </div>
+                    <div style="display: flex;">
+                        <p id="showFeaturesDivListP">Background Music</p>
+                        <p id="showFeaturesDivListP">Text To Speech</p>
+                    </div>
+                    <div style="display: flex;">
+                        <p id="showFeaturesDivListP" style="width: 40%;">Trim Audio</p>
+                    </div>
+                </div>
+            </div>
+            <div class="showFeaturesImg">
+                <img src="{% static 'images/record_feature.webp' %}" alt="">
+            </div>
+        </div>
+    </body>
+    <script src="{% static 'script/recorder.js' %}"></script>
+
+
+
+
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Record and Upload Video</title>
+    </head>
+    <body>
+        <video id="video" width="640" height="480" autoplay></video>
+        <button id="startRecord">Start Recording</button>
+        <button id="stopRecord" disabled>Stop Recording</button>
+        <button id="uploadVideo" disabled>Upload Video</button>
+    
+        <script>
+            const video = document.getElementById('video');
+            const startRecordBtn = document.getElementById('startRecord');
+            const stopRecordBtn = document.getElementById('stopRecord');
+            const uploadVideoBtn = document.getElementById('uploadVideo');
+    
+            let mediaRecorder;
+            let recordedChunks = [];
+    
+            navigator.mediaDevices.getUserMedia({ video: true })
+                .then((stream) => {
+                    video.srcObject = stream;
+    
+                    mediaRecorder = new MediaRecorder(stream);
+    
+                    mediaRecorder.ondataavailable = (event) => {
+                        if (event.data.size > 0) {
+                            recordedChunks.push(event.data);
+                        }
+                    };
+    
+                    mediaRecorder.onstop = () => {
+                        const blob = new Blob(recordedChunks, { type: 'video/webm' });
+                        const url = URL.createObjectURL(blob);
+    
+                        video.src = url;
+    
+                        // Enable upload button after recording stops
+                        uploadVideoBtn.disabled = false;
+                    };
+                })
+                .catch((error) => {
+                    console.error('Error accessing camera:', error);
+                });
+    
+            startRecordBtn.addEventListener('click', () => {
+                mediaRecorder.start();
+                startRecordBtn.disabled = true;
+                stopRecordBtn.disabled = false;
+            });
+    
+            stopRecordBtn.addEventListener('click', () => {
+                mediaRecorder.stop();
+                startRecordBtn.disabled = false;
+                stopRecordBtn.disabled = true;
+            });
+    
+            uploadVideoBtn.addEventListener('click', () => {
+                const blob = new Blob(recordedChunks, { type: 'video/webm' });
+                const formData = new FormData();
+                formData.append('video', blob, 'recorded-video.webm');
+    
+                fetch('/upload_video/', {
+                    method: 'POST',
+                    body: formData,
+                })
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data);
+                    alert(data.status);
+                })
+                .catch(error => {
+                    console.error('Error uploading video:', error);
+                    alert('Error uploading video');
+                });
+            });
+        </script>
+    </body>
+    </html>
+    if request.method == 'POST' and request.FILES.get('video'):
+        video_file = request.FILES['video']
+        
+        # Here you can perform further processing on the video, e.g., pass it to a machine learning model.
+        
+        return JsonResponse({'status': 'success'})
+    

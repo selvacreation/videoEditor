@@ -1,0 +1,102 @@
+.backgroundImgRecord{
+    width: 100%;
+    height: 65%;
+    display: flex;
+    position: absolute;
+}
+.txtAndImgBanner{
+    position: absolute;
+    z-index: 1;
+    display: flex;
+}
+.txtAndImgBannerTxt{
+    width: 40%;
+    margin-left: 7%;
+    margin-top: 7%;
+}
+.txtAndImgBannerImg{
+    margin-top: 5%;
+    width: 60%;
+}
+.txtAndImgBannerTxtP{
+    border: 1px solid black;
+    margin-right: 20vw;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: white;
+    background-color: black;
+    font-size: 20px;
+}
+.MoongList{
+    position: relative;
+    display: flex;
+    margin-top: 69vh;
+    margin-left: 5vw;
+}
+
+
+.showFeatures{
+    display: flex;
+    margin-top: 10%;
+    background-color: rgb(212, 241, 241);
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 5%;
+    margin-bottom: 10%;
+}
+.showFeaturesDiv{
+    width: 50%;
+    text-align: center;
+}
+.showFeaturesImg{
+    width: 50%;
+}
+/* .showFeaturesDivList{
+    display: flex;
+    
+} */
+#showFeaturesDivListP{
+    border: 1px solid black;
+    width: 50%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-left: 5%;
+    margin-right: 5%;
+    background-color: white;
+}
+
+.blackBG{
+    position: absolute;
+    z-index: 2;
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+    opacity: 0.9;
+}
+#video{
+    position: absolute;
+    z-index: 3;
+    margin-top: 10vh;
+    margin-left: 25vw;
+    height: 60vh;
+    width: 50vw;
+    display: flex;
+    /* background-color: black; */
+}
+/* .camTag{
+    margin-top: 60vh;
+    margin-left: 25vw;
+    height: 60vh;
+    width: 50vw;
+} */
+#RecordBtn{
+     margin-top: 64.5vh;
+     margin-left: 29vw;
+     height: 6vh;
+     width: 43%;
+     position: absolute;
+     z-index: 4;
+     background-color: black;
+     opacity: 0.7;
+}

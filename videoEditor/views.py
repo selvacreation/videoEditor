@@ -315,3 +315,7 @@ def elevenLabsTtsApi(Gender,Accent,Text):
 def features(request):
      template = loader.get_template('features.html')
      return HttpResponse(template.render())
+
+def record(request):
+     template = loader.get_template('videoRecorder.html')
+     return HttpResponse(template.render())
